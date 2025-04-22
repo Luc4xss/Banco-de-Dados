@@ -1,0 +1,44 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Projeto de Banco de Dados - Sistema Hospitalar}
+\author{Por Diogo, João Oliveira, Lucas Daniel, Lucas Gabriel, Miguel Rocha \\ e Pedro Guedes}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Projeto Conceitual (Minimundo)}
+
+O Hospital Santa Saúde necessita de um sistema de banco de dados para a gestão eficiente de suas operações. Esse sistema deve armazenar informações referentes a pacientes, funcionários (médicos, enfermeiros e atendentes), especialidades médicas, consultas, exames, internações, leitos, setores, medicamentos, prescrições e agendamentos.
+
+Cada paciente possui um número de prontuário único, nome completo, CPF, data de nascimento, telefone, e-mail e endereço. Um paciente pode realizar diversas consultas, exames e internações ao longo do tempo.
+
+Os médicos são identificados por seu número de CRM e possuem nome, CPF, telefone, e-mail, salário e uma ou mais especialidades médicas, como cardiologia, neurologia, ortopedia, entre outras. Médicos podem realizar consultas e solicitar exames.
+
+Os enfermeiros e atendentes também compõem o quadro de funcionários. Todos os funcionários do hospital compartilham atributos em comum, como nome, CPF, telefone, e-mail, cargo e salário. Diante disso, é possível realizar uma generalização denominada Funcionário, da qual derivam as especializações Médico, Enfermeiro e Atendente.
+
+As consultas possuem data, horário, paciente atendido e o médico responsável. Uma consulta pode ou não gerar solicitações de exames.
+
+Os exames possuem um código identificador, nome, tipo (imagem, sangue, urina, etc.), data de realização, paciente examinado, médico solicitante e o funcionário responsável pela execução. Um paciente pode realizar vários exames, e um exame pode ser solicitado por um único médico.
+
+As internações são registradas com um código único, data de entrada, data de alta (quando houver), diagnóstico e o leito onde o paciente foi alocado. Cada internação está associada a um único paciente. Um leito pode receber diferentes pacientes ao longo do tempo, mas somente um por vez.
+
+Os leitos estão localizados em setores específicos do hospital, como UTI, emergência, pediatria, entre outros. Cada setor possui um código identificador, nome e localização física no hospital, e pode conter diversos leitos.
+
+O hospital administra uma variedade de medicamentos, cada um com código, nome, fabricante, dosagem e forma de administração. Os medicamentos podem ser prescritos tanto em consultas quanto durante internações.
+
+As prescrições são registros que associam pacientes a medicamentos receitados, contendo informações sobre a dosagem, frequência, data da prescrição e o funcionário responsável (geralmente médico ou enfermeiro). Um paciente pode receber diversos medicamentos e um mesmo medicamento pode ser prescrito para vários pacientes.
+
+Além disso, o hospital realiza o controle dos agendamentos, que representam compromissos futuros dos pacientes com a instituição, podendo envolver consultas, exames ou internações. Cada agendamento possui uma data, horário, tipo (consulta, exame ou internação), status (agendado, realizado ou cancelado), e pode conter observações relevantes. O agendamento está sempre vinculado a um paciente, podendo também envolver médicos, leitos e funcionários responsáveis pelo registro. Esse controle de agendamentos visa organizar a agenda da instituição, garantindo a disponibilidade de profissionais e recursos hospitalares, otimizando o atendimento e evitando conflitos de horários.
+
+Este sistema visa garantir a rastreabilidade das ações médicas, a organização das internações, a correta administração de medicamentos e o controle de recursos hospitalares, promovendo segurança e eficiência no atendimento ao paciente.
+
+\end{document}
