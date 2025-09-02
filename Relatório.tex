@@ -1,0 +1,36 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{Projeto de Banco de Dados - Sistema Hospitalar}
+\author{Por Diogo, João Oliveira, Lucas Daniel, Lucas Gabriel, Miguel Rocha \\ e Pedro Guedes}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Relatório}
+
+O modelo entidade-relacionamento apresentado representa de forma abrangente a estrutura e o funcionamento de um sistema hospitalar, contemplando as diferentes etapas do atendimento de um paciente dentro da instituição. Ele permite compreender como os dados são organizados e como as entidades interagem entre si, garantindo que todas as informações essenciais ao funcionamento do hospital estejam devidamente registradas.
+
+A entidade Funcionário é uma das bases do modelo. Nela estão armazenados atributos fundamentais como identificação, nome, CPF, cargo, salário, telefone e e-mail. Essa entidade é generalizada em três papéis distintos: médico, enfermeiro e atendente, cada um desempenhando funções específicas dentro do hospital. O médico, por exemplo, possui vínculo com uma ou mais especialidades, como cardiologia ou pediatria, o que possibilita a classificação de seus atendimentos. Além disso, ele é responsável por solicitar exames, realizar consultas e prescrever tratamentos. O enfermeiro, por sua vez, pode atuar em apoio ao médico e no acompanhamento direto dos pacientes, enquanto o atendente exerce papel administrativo, como o registro de agendamentos.
+
+O paciente, outra entidade central, reúne informações como identificação, nome, CPF, telefone e data de nascimento. É em torno dele que giram as demais operações do hospital, já que é o paciente quem realiza consultas, faz exames, recebe prescrições e pode ser internado. Esse vínculo permite que todas as informações clínicas e administrativas fiquem associadas a uma única pessoa, garantindo maior controle e segurança no tratamento.
+
+As consultas são um ponto chave do modelo, funcionando como o elo entre paciente e médico. Elas registram o momento do atendimento, incluindo data e horário, e podem gerar exames para investigação de saúde ou ainda prescrições médicas, que se materializam no fornecimento de medicamentos. As prescrições possuem uma identificação própria e estão diretamente ligadas aos pacientes. Cada prescrição pode conter um ou vários medicamentos, os quais são descritos por atributos como nome, dosagem e fabricante. Essa relação assegura que o tratamento seja documentado e acompanhado de forma clara e confiável.
+
+Os exames também possuem papel relevante dentro do sistema. Eles carregam atributos como identificação, nome, tipo e data de realização. São solicitados pelos médicos, executados por funcionários e gerados a partir das consultas, garantindo a integração entre diagnóstico e atendimento clínico. Dessa forma, o sistema consegue rastrear não apenas o resultado final, mas também todo o processo que levou à realização do exame.
+
+Outro aspecto importante é a internação, que organiza a permanência do paciente no hospital. Essa entidade possui dados como identificação, data de entrada e data de alta. Cada internação está vinculada a um paciente e ocorre em um leito específico, o qual pertence a um setor hospitalar identificado por nome e localização. Essa organização permite não apenas controlar o fluxo de pacientes internados, mas também otimizar a utilização dos recursos físicos do hospital.
+
+O agendamento é outro componente que merece destaque. Ele registra informações como identificação, data, horário e status, funcionando como um instrumento de gestão e planejamento. É por meio do agendamento que consultas, exames e internações são organizados, garantindo que não haja conflitos de horários e que todos os atendimentos ocorram de forma ordenada. Esse processo é realizado por funcionários, fortalecendo a ligação entre o setor administrativo e os serviços assistenciais.
+
+No conjunto, o modelo descreve uma rede complexa, mas extremamente organizada, onde cada entidade se conecta a outras por meio de relacionamentos bem definidos. Essa estrutura garante que o hospital consiga acompanhar todo o ciclo de atendimento do paciente, desde o momento em que ele agenda uma consulta até sua possível internação e alta. Além disso, assegura que todos os dados clínicos e administrativos fiquem centralizados, evitando perdas de informação e oferecendo maior segurança e eficiência ao processo de cuidado em saúde
+
+\end{document}
